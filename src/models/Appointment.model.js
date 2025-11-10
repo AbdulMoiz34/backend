@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const { ObjectId, String, Date } = mongoose.Schema.Types;
 
 const AppointmentSchema = new mongoose.Schema({
-    patientId: {
+    patient: {
         type: ObjectId,
         ref: "User"
     },
-    doctorId: {
+    doctor: {
         type: ObjectId,
-        ref: "User"
+        ref: "Doctor"
     },
     status: String,
     date: Date,
