@@ -14,8 +14,9 @@ app.use(cookieParser());
 app.use(cors({
     origin: "https://frontend-teal-alpha-33.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    credentials: true
 }));
+
 app.use("/api", routes);
 
 const PORT = ENV.PORT || 5000;
@@ -25,10 +26,6 @@ if (ENV.NODE_ENV !== "production") {
         console.log("server is running.");
     });
 }
-
-// app.listen(PORT, () => {
-//     console.log("server is running.");
-// });
 
 connectDB();
 export default app;

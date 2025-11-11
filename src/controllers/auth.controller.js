@@ -29,7 +29,8 @@ const signup = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false
+            secure: true,
+            sameSite: "none"
         });
 
         return res.status(CREATED).json({
@@ -55,8 +56,8 @@ const login = async (req, res) => {
 
     res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none"
     });
 
     res.json({
