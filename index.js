@@ -12,10 +12,10 @@ app.use(helmet());
 app.use(cookieParser());
 
 app.use(cors({
-    origin: "https://frontend-teal-alpha-33.vercel.app/",
+    origin: "https://frontend-teal-alpha-33.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-})
-);
+}));
 app.use("/api", routes);
 
 const PORT = ENV.PORT || 5000;
